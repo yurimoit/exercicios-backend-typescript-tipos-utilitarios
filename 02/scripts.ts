@@ -11,11 +11,23 @@ type Cartao = {
     cvv: number
 }
 
+type Endereco = {
+    cep: string,
+    rua: string,
+    bairro: string,
+    cidade: string,
+    estado: string
+}
+
+type LiteralType = 'credito' | 'Debito'
+type TipoTransacao = Lowercase<LiteralType>
+
 type Carrinho = {
     item: Item,
     qtd: number,
     desconto: number,
     frete: number,
-    tipoTransacao: 'credito' | 'Debito',
-    cartao: Cartao
+    tipoTransacao: TipoTransacao,
+    cartao: Cartao,
+    endereco: Endereco
 }

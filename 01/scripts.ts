@@ -3,9 +3,13 @@ type Usuario = {
     email: string,
     cpf: string,
     rg: string
-    dataNacimento?: string
+    dataNascimento?: string
 }
 
-const cadastrarUsuário = (info: Usuario): Usuario => {
+type UsuarioParcial = Partial<Usuario>
+type Keys = "rg"
+type UsuarioParcial2 = Omit<Usuario, Keys>
+
+const cadastrarUsuário = (info: Required<UsuarioParcial2>): UsuarioParcial2 => {
     return info;
 }
